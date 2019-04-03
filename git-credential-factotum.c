@@ -47,9 +47,7 @@ threadmain(int argc, char *argv[])
 	srv = nil;
 	parserequest();	
 	up = auth_getuserpasswd(auth_getkey, "proto=pass role=client service=%s server=%s", svc, srv);
-	if(up == nil){
-		sysfatal("getuserpasswd: %r");
-	}else{
+	if(up){
 		print("username=%s\n", up->user);
 		print("password=%s\n", up->passwd);
 	}
