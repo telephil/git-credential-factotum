@@ -1,0 +1,14 @@
+git-credential-factotum
+=======================
+
+DESCRIPTION
+-----------
+A git credential-helper using plan9port factotum auth server to retrieve credentials.
+
+INSTALL
+-------
+- Build using mk and copy the git-credential-factotum executable somewhere in your $PATH.
+- Configure git to use this helper:
+	$ git config --global credential.helper factotum
+- Add keys to factotum for your GIT servers:
+	$ factotum -g 'proto=pass service=https server=github.com user=bob !password=mypassword'
