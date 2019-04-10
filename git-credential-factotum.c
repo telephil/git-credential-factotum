@@ -85,7 +85,7 @@ threadmain(int argc, char *argv[])
 {
 	Request *r;
 
-	if(argc == 1)
+	if(argc != 2)
 		threadexits("args");
 	
 	r = parserequest();
